@@ -69,7 +69,7 @@ router.post("/register", validateRegisterInput, async (req, res, next) => {
         const user = await newUser.save();
         // return res.json({ user });
         return res.json(await loginUser(user)); // <-- THIS IS THE CHANGED LINE
-      } catch (err) {
+      } catch (err) { 
         next(err);
       }
     });
